@@ -1,6 +1,7 @@
 package com.itsuhbat.CRM;
 
 import com.itsuhbat.CRM.markets.Market;
+import com.itsuhbat.CRM.products.Product;
 
 public class Main {
 
@@ -11,11 +12,11 @@ public class Main {
         System.out.println(market);
 
         System.out.println("***********************************");
+        Product product = new Product("Shakar", 20000D, "shirinlik", 2D, "kg");
+        System.out.println(product);
 
-        Market market2 = new Market(
-                "Easy 2","Shayxontoxur 2 tumani, Ganga 2",
-                50D, "08.00 dan", "17.00 gacha");
-        System.out.println(market2);
+        System.out.println(market.products);
+
     }
 
 }

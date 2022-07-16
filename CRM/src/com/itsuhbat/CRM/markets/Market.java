@@ -14,6 +14,12 @@ public class Market {
     public Market() {
     }
 
+    public Market(String name, String address, Product[] products) {
+        this.name = name;
+        this.address = address;
+        this.products = products;
+    }
+
     public Market(String name, String address, Double square) {
         this.name = name;
         this.address = address;
