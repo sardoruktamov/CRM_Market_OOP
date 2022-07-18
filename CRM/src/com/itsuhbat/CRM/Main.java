@@ -12,10 +12,10 @@ public class Main {
         Market market1 = new Market("Easy","Shayxontoxur tumani, Ganga", 80D, 1,2);
         market1.startTime = "09:00 dan";
         market1.endTime = "18:00 gacha";
+//        Employee employee = new Employee("Sardor", 7, 30000D);
 
-        Employee employee = new Employee("Sardor", 7, 30000D);
-//        employee.r
-        System.out.println(employee+"\n\n\n");
+
+
 
 
         Scanner scanner = new Scanner(System.in);

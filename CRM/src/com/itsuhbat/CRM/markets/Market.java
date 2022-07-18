@@ -88,8 +88,31 @@ public class Market {
     }
 
     public void deleteProduct(){
+
+        String nameProduct;
+        Scanner nameScaner = new Scanner(System.in);
+        System.out.println("o'chirish uchun maxsulot nomini kiriting:");
+        nameProduct = nameScaner.nextLine();
+        Product[] anotherArray = new Product[products.length-1];
+
+        for (Product s : products) {
+            System.out.println("value========= " + s);
+        }
+
+        for (int i = 0, k = 0; i < products.length; i++) {
+
+            System.out.println(products[i]+"++++++++++++++++++++++");
+
+//            if (products[i] == nameProduct) {
+//                continue;
+//            }
+
+            anotherArray[k++] = products[i];
+        }
+
         System.out.println("o'chirildi**********");
     }
+
 
     public void selectProduct(){
 
