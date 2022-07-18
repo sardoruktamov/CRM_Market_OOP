@@ -3,11 +3,11 @@ package com.itsuhbat.CRM.products;
 import java.util.Scanner;
 
 public class Product {
-    String name;
-    Double price;
-    String type;
-    Double amount;
-    String unit;        // o'lchov birligi
+    public String name;
+    public Double price;
+    public String type;
+    public Double amount;
+    public String unit;        // o'lchov birligi
 
 
     public Product(String name, Double price, String type, Double amount, String unit) {
