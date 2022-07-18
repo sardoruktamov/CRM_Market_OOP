@@ -95,21 +95,19 @@ public class Market {
         nameProduct = nameScaner.nextLine();
         Product[] anotherArray = new Product[products.length-1];
 
-        for (Product s : products) {
-            System.out.println("value========= " + s);
-        }
 
         for (int i = 0, k = 0; i < products.length; i++) {
 
-            System.out.println(products[i]+"++++++++++++++++++++++");
-
-//            if (products[i] == nameProduct) {
-//                continue;
-//            }
+            if (products[i].name == nameProduct) {
+                continue;
+            }
 
             anotherArray[k++] = products[i];
         }
 
+        for (Product s : products) {
+            System.out.println("value========= " + s);
+        }
         System.out.println("o'chirildi**********");
     }
 
