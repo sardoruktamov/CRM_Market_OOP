@@ -21,9 +21,12 @@ public class Product {
         return toString();
     }
 
+    public Product() {
+    }
+
     @Override
     public String toString() {
-        return String.format("Maxsulot nomi: %s \nnarxi: %.1f \nturi: %s \nmiqdori: %.1f \no`lchov birligi: %s ",
+        return String.format("Maxsulot nomi: %s narxi: %.1f turi: %s miqdori: %.1f o`lchov birligi: %s ",
                 name, price, type, amount, unit);
     }
 }
