@@ -1,6 +1,7 @@
 package com.itsuhbat.CRM;
 
 import com.itsuhbat.CRM.markets.Market;
+import com.itsuhbat.CRM.personnel.Employee;
 import com.itsuhbat.CRM.products.Product;
 
 import java.util.Scanner;
@@ -12,19 +13,26 @@ public class Main {
         market1.startTime = "09:00 dan";
         market1.endTime = "18:00 gacha";
 
+        Employee employee = new Employee("Sardor", 7, 30000D);
+//        employee.r
+        System.out.println(employee+"\n\n\n");
+
 
         Scanner scanner = new Scanner(System.in);
         int action;
 
         do {
-            System.out.println("Menyuni tanlang: \n[1].Mahsulot qo'shish \n[2].Mahsulotlar ro'yxati \n[3].Market ma'lumotlari \n[4].Employee qo'shish \n[5].Employee ro'yxati \n[0].Dasturni tugatish");
+            System.out.println(
+                    "Menyuni tanlang: " +
+                            "\n[1].Market ma'lumotlari " +
+                            "\n[2].MAXSULOTLAR HAQIDA " +
+                            "\n[3].XODIMLAR HAQIDA " +
+                            "\n[0].Dasturni tugatish");
             action = scanner.nextInt();
             switch (action){
-                case 1: market1.addProduct(); break;
-                case 2: market1.printProduct(); break;
-                case 3: System.out.println(market1); break;
-                case 4: market1.addEmployee(); break;
-                case 5: market1.printEmploees(); break;
+                case 1: System.out.println(market1); break;
+                case 2: market1.selectProduct(); break;
+                case 3: market1.selectEmployee(); break;
                 case 0: System.exit(0);
             }
         }while (true);

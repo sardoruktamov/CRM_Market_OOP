@@ -3,6 +3,7 @@ package com.itsuhbat.CRM.markets;
 import com.itsuhbat.CRM.personnel.Employee;
 import com.itsuhbat.CRM.products.Product;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -62,6 +63,7 @@ public class Market {
             resizeArray();
         }
         products[index++] = product;
+        System.out.println(name+" ma`lumotlari muvoffaqiyatli qo`shildi"+"\n"+"*****************************************");
     }
 
     //product massivini uzunligini oshirish
@@ -85,7 +87,32 @@ public class Market {
         };
     }
 
-    /*  Eployeee--------------------*/
+    public void deleteProduct(){
+        System.out.println("o'chirildi**********");
+    }
+
+    public void selectProduct(){
+
+        Scanner scanner = new Scanner(System.in);
+        int action;
+
+        do {
+            System.out.println(
+                    "Menyuni tanlang: " +
+                            "\n[1].Mahsulot qo'shish " +
+                            "\n[2].Mahsulotlar ro'yxati " +
+                            "\n[3].Mahsulotni o'chirish " +
+                            "\n[0].Dasturni tugatish");
+            action = scanner.nextInt();
+            switch (action){
+                case 1: addProduct(); break;
+                case 2: printProduct(); break;
+                case 3: deleteProduct(); break;
+                case 0: System.exit(0);
+            }
+        }while (true);
+    }
+    //  Eployeee------------------------------------------------
     public void addEmployee(){
         String name;
         Integer experience;
@@ -104,6 +131,7 @@ public class Market {
             resizeArrayEmployee();
         }
         employees[index++] = employee;
+        System.out.println(name+" ma`lumotlari muvoffaqiyatli qo`shildi"+"\n"+"*****************************************");
     }
     public void resizeArrayEmployee() {
         //1-usul
@@ -115,7 +143,28 @@ public class Market {
         }
     }
 
-        @Override
+    public void selectEmployee(){
+        Scanner scanner = new Scanner(System.in);
+        int action;
+
+        do {
+            System.out.println(
+                    "Menyuni tanlang: " +
+                            "\n[1].Employee qo'shish " +
+                            "\n[2].Employee ro'yxati " +
+                            "\n[3].Employee o'chirish " +
+                            "\n[0].Dasturni tugatish");
+            action = scanner.nextInt();
+            switch (action){
+                case 4: addEmployee(); break;
+                case 5: printEmploees(); break;
+                case 6: deleteProduct(); break;
+                case 0: System.exit(0);
+            }
+        }while (true);
+    }
+
+    @Override
     public String toString() {
         return String.format("Nomi: %s \nManzili: %s \nHajmi: %.1f \nIsh boshlash vaqti: %s \nIsh tugash vaqti: %s ",
                 name, address, square, startTime, endTime);
