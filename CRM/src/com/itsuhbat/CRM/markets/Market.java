@@ -9,13 +9,13 @@ import java.util.Scanner;
 
 public class Market {
 
-    public String name;
-    public String address;
-    public Product[] products;
-    public Employee[] employees;
-    public Double square;
-    public String startTime;
-    public String endTime;
+    private String name;
+    private String address;
+    private Product[] products;
+    private Employee[] employees;
+    private Double square;
+    private String startTime;
+    private String endTime;
     // index of new insted product
     private int index;
 
@@ -83,6 +83,11 @@ public class Market {
 
     public void printProduct(){
         for (int i=0; i<index; i++){
+            System.out.println(i + 1 + " - " + products[i]);
+        };
+    }
+    public void printProduct(int size){
+        for (int i=0;i<size && i<index; i++){
             System.out.println(i + 1 + " - " + products[i]);
         };
     }
@@ -204,6 +209,70 @@ public class Market {
                 case 0: System.exit(0);
             }
         }while (true);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        if (name.length() > 5)
+            this.name = name;
+        else System.out.printf("%s uzunligi yetarli emas!", name);
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        if (name.length() > 5)
+            this.address = address;
+        else System.out.printf("%s uzunligi yetarli emas!", address);
+    }
+
+    public Product[] getProducts() {
+        return products;
+    }
+
+    public void setProducts(Product[] products) {
+        this.products = products;
+        index = products.length;
+        resizeArray();
+    }
+
+    public Employee[] getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(Employee[] employees) {
+        this.employees = employees;
+    }
+
+    public Double getSquare() {
+        return square;
+    }
+
+    public void setSquare(Double square) {
+        if (square > 25)
+            this.square = square;
+        else System.out.println("25 mKv dan yuqori bo'lishi kerak!");
+    }
+
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
     }
 
     @Override
