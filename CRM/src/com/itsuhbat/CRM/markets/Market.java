@@ -106,7 +106,29 @@ public class Market {
         products = anotherArray;
         index--;
 
-        System.out.println("o'chirildi**********");
+        System.out.println("Mahsulot o'chirildi**********");
+    }
+
+    public void deleteEmployee(){
+
+        String nameEmployee;
+        Scanner nameScaner = new Scanner(System.in);
+        System.out.println("o'chirish uchun maxsulot nomini kiriting:");
+        nameEmployee = nameScaner.nextLine();
+        Employee[] anotherArray = new Employee[employees.length-1];
+
+
+        for (int i = 0, k = 0; i < index; i++) {
+
+            if (employees[i].name.equalsIgnoreCase(nameEmployee)) {
+                continue;
+            }
+            anotherArray[k++] = employees[i];
+        }
+        employees = anotherArray;
+        index--;
+
+        System.out.println("Xodim ma`lumotlari o'chirildi**********");
     }
 
 
@@ -150,6 +172,7 @@ public class Market {
             resizeArrayEmployee();
         }
         employees[index++] = employee;
+
         System.out.println(name+" ma`lumotlari muvoffaqiyatli qo`shildi"+"\n"+"*****************************************");
     }
     public void resizeArrayEmployee() {
@@ -175,9 +198,9 @@ public class Market {
                             "\n[0].Dasturni tugatish");
             action = scanner.nextInt();
             switch (action){
-                case 4: addEmployee(); break;
-                case 5: printEmploees(); break;
-                case 6: deleteProduct(); break;
+                case 1: addEmployee(); break;
+                case 2: printEmploees(); break;
+                case 3: deleteEmployee(); break;
                 case 0: System.exit(0);
             }
         }while (true);

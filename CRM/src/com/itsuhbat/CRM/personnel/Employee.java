@@ -1,9 +1,9 @@
 package com.itsuhbat.CRM.personnel;
 
 public class Employee {
-    String name;
-    Integer experience;
-    Double salary;
+    public String name;
+    public Integer experience;
+    public Double salary;
 
     public Employee() {
     }
