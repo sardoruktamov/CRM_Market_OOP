@@ -81,7 +81,7 @@ public class Market {
         for (int i=0; i<products.length; i++){
             temp[i] = products[i];      //product qiymatlarini vaqtincha temp ga olib o`tyapmiz
         }
-        products = temp;
+        products = temp;    // 1-usulda ham yoziladi
     }
 
     public void printProduct(){
@@ -153,6 +153,7 @@ public class Market {
                             "\n[3].Mahsulotlar ketma-ketlikda chiqarish " +
                             "\n[4].Mahsulotni o'chirish " +
                             "\n[5].Market ma'lumotlari " +
+                            "\n[6].Market ma'lumotlarini o'zgartirish " +
                             "\n[0].Dasturni tugatish");
             action = scanner.nextInt();
             switch (action){
@@ -165,9 +166,81 @@ public class Market {
                 }
                 case 4: deleteProduct(); break;
                 case 5: marketInfo(); break;
+                case 6: changeMarketInfo(); break;
                 case 0: System.exit(0);
             }
         }while (true);
+    }
+
+    //market maydonini o`zgartirish methodi
+    public void changeMarketInfo(){
+
+        Scanner scanner = new Scanner(System.in);
+        int action;
+
+        do {
+            System.out.println(
+                    "Market maydonini tanlang: " +
+                            "\n[1].nomini o'zgartirish " +
+                            "\n[2].manzilini o'zgartirish " +
+                            "\n[3].maydonini o'zgartirish " +
+                            "\n[4].ish boshlash vaqtini o'zgartirish " +
+                            "\n[5].ish tugash vaqtini o'zgartirish " +
+                            "\n[0].Ortga qaytish");
+            action = scanner.nextInt();
+            switch (action){
+                case 1: changeMarketName();break;
+                case 2: changeMarketAddress();break;
+                case 3: changeMarketSquare();break;
+                case 4: changeMarketStartTime();break;
+                case 5: changeMarketEndTime();break;
+                case 0: selectProduct();
+            }
+        }while (true);
+    }
+    public void changeMarketName(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Yangi nomni kiriting: ");
+        String marketName = scanner.nextLine();
+        setName(marketName);
+        marketInfo();
+    }
+    public void changeMarketSquare(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Yangi maydonni kiriting: ");
+        Double marketSquare = scanner.nextDouble();
+        setSquare(marketSquare);
+        System.out.println("---------------------------------------------");
+        marketInfo();
+        System.out.println("---------------------------------------------");
+    }
+    public void changeMarketAddress(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Yangi manzilni kiriting: ");
+        String marketAddress = scanner.nextLine();
+        setAddress(marketAddress);
+
+        System.out.println("---------------------------------------------");
+        marketInfo();
+        System.out.println("---------------------------------------------");
+    }
+    public void changeMarketStartTime(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Ish boshlash vaqtini kiriting: ");
+        String marketStartTime = scanner.nextLine();
+        setStartTime(marketStartTime);
+        System.out.println("---------------------------------------------");
+        marketInfo();
+        System.out.println("---------------------------------------------");
+    }
+    public void changeMarketEndTime(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Ish tugash vaqtini kiriting: ");
+        String marketEndTime = scanner.nextLine();
+        setEndTime(marketEndTime);
+        System.out.println("---------------------------------------------");
+        marketInfo();
+        System.out.println("---------------------------------------------");
     }
 
     //  Sotuvchi------------------------------------------------
