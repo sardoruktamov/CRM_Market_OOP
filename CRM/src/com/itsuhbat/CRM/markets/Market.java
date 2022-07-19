@@ -96,18 +96,16 @@ public class Market {
         Product[] anotherArray = new Product[products.length-1];
 
 
-        for (int i = 0, k = 0; i < products.length; i++) {
+        for (int i = 0, k = 0; i < index; i++) {
 
-            if (products[i].name == nameProduct) {
+            if (products[i].name.equalsIgnoreCase(nameProduct)) {
                 continue;
             }
-
             anotherArray[k++] = products[i];
         }
+        products = anotherArray;
+        index--;
 
-        for (Product s : products) {
-            System.out.println("value========= " + s);
-        }
         System.out.println("o'chirildi**********");
     }
 
