@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Market market1 = new Market("Easy","Shayxontoxur tumani, Ganga", 80D, 1,2);
+        Market market1 = new Market("Easy","Shayxontoxur tumani, Ganga",  80D, 1,2);
         market1.setStartTime("09:00 dan");
         market1.setEndTime("18:00 gacha");
 //        Employee employee = new Employee("Sardor", 7, 30000D);
@@ -32,20 +32,14 @@ public class Main {
         do {
             System.out.println(
                     "Menyuni tanlang: " +
-                            "\n[1].Market ma'lumotlari " +
-                            "\n[2].MAXSULOTLAR HAQIDA " +
-                            "\n[22].MAXSULOTLAR ketma ketlikda chiqarish " +
+                            "\n[1].SOTUVCHI " +
+                            "\n[2].HARIDOR " +
                             "\n[3].XODIMLAR HAQIDA " +
                             "\n[0].Dasturni tugatish");
             action = scanner.nextInt();
             switch (action){
-                case 1: System.out.println(market1); break;
-                case 2: market1.selectProduct(); break;
-                case 22: {
-                    System.out.println("o'lchamini kiriting: ");
-                    int size = scanner.nextInt();
-                    market1.printProduct(size); break;
-                }
+                case 1: market1.selectProduct(); break;
+                case 2: market1.printClient(); break;
                 case 3: market1.selectEmployee(); break;
                 case 0: System.exit(0);
             }

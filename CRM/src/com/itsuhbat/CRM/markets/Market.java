@@ -42,6 +42,9 @@ public class Market {
         employees = new Employee[employeeCount];
     }
 
+    public void marketInfo(){
+        System.out.printf("Market nomi: %s \nManzili: %s \nMaydoni: %.1f \n", getName(), getAddress(), getSquare());
+    }
     public void addProduct(){
         String name, type, unit;
         double price, amount;
@@ -103,7 +106,7 @@ public class Market {
 
         for (int i = 0, k = 0; i < index; i++) {
 
-            if (products[i].name.equalsIgnoreCase(nameProduct)) {
+            if (products[i].getName().equalsIgnoreCase(nameProduct)) {
                 continue;
             }
             anotherArray[k++] = products[i];
@@ -147,13 +150,45 @@ public class Market {
                     "Menyuni tanlang: " +
                             "\n[1].Mahsulot qo'shish " +
                             "\n[2].Mahsulotlar ro'yxati " +
-                            "\n[3].Mahsulotni o'chirish " +
+                            "\n[3].Mahsulotlar ketma-ketlikda chiqarish " +
+                            "\n[4].Mahsulotni o'chirish " +
+                            "\n[5].Market ma'lumotlari " +
                             "\n[0].Dasturni tugatish");
             action = scanner.nextInt();
             switch (action){
                 case 1: addProduct(); break;
                 case 2: printProduct(); break;
-                case 3: deleteProduct(); break;
+                case 3: {
+                    System.out.println("o'lchamini kiriting: ");
+                    int size = scanner.nextInt();
+                    printProduct(size); break;
+                }
+                case 4: deleteProduct(); break;
+                case 5: marketInfo(); break;
+                case 0: System.exit(0);
+            }
+        }while (true);
+    }
+
+    //  Sotuvchi------------------------------------------------
+    public void printClient(){
+        Scanner scanner = new Scanner(System.in);
+        int action;
+
+        do {
+            System.out.println(
+                    "Menyuni tanlang: " +
+                            "\n[1].Mahsulotlar ro'yxati " +
+                            "\n[2].Mahsulotlar ketma-ketlikda chiqarish " +
+                            "\n[0].Dasturni tugatish");
+            action = scanner.nextInt();
+            switch (action){
+                case 1: printProduct(); break;
+                case 2: {
+                    System.out.println("o'lchamini kiriting: ");
+                    int size = scanner.nextInt();
+                    printProduct(size); break;
+                }
                 case 0: System.exit(0);
             }
         }while (true);
