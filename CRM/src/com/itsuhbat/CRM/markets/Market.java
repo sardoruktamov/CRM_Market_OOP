@@ -43,7 +43,8 @@ public class Market {
     }
 
     public void marketInfo(){
-        System.out.printf("Market nomi: %s \nManzili: %s \nMaydoni: %.1f \n", getName(), getAddress(), getSquare());
+        System.out.printf("Market nomi: %s Manzili: %s Maydoni: %.1f ish boshlash vaqti: %s ish tugash vaqti: %s \n",
+                getName(), getAddress(), getSquare(), getStartTime(), getEndTime());
     }
     public void addProduct(){
         String name, type, unit;
@@ -198,12 +199,18 @@ public class Market {
             }
         }while (true);
     }
+
+    public void changeMarketField(){
+
+    }
     public void changeMarketName(){
         Scanner scanner = new Scanner(System.in);
         System.out.print("Yangi nomni kiriting: ");
         String marketName = scanner.nextLine();
         setName(marketName);
+        System.out.println("---------------------------------------------");
         marketInfo();
+        System.out.println("---------------------------------------------");
     }
     public void changeMarketSquare(){
         Scanner scanner = new Scanner(System.in);
@@ -253,6 +260,7 @@ public class Market {
                     "Menyuni tanlang: " +
                             "\n[1].Mahsulotlar ro'yxati " +
                             "\n[2].Mahsulotlar ketma-ketlikda chiqarish " +
+                            "\n[3].Mahsulot sotib olish " +
                             "\n[0].Dasturni tugatish");
             action = scanner.nextInt();
             switch (action){
@@ -262,9 +270,38 @@ public class Market {
                     int size = scanner.nextInt();
                     printProduct(size); break;
                 }
+                case 3: {
+                    System.out.println("Mahsulot nomerini kiriting: ");
+                    int id = scanner.nextInt();
+                    productId(id); break;
+                }
                 case 0: System.exit(0);
             }
         }while (true);
+    }
+
+    public void productId(int id){
+        for (int i=0;i< products.length; i++){
+            if (i == id) {
+
+                System.out.printf("Omborda %.1f kg %s qolgan \n", products[i-1].getAmount(), products[i-1].getName());
+                Scanner scanner = new Scanner(System.in);
+                System.out.printf("Qancha miqdorda %s sotib olmoqchisiz? \n", products[i-1].getName());
+                double amountProduct = scanner.nextDouble();
+                if (products[i-1].getAmount() < amountProduct){
+                    System.out.printf(
+                            "Omborda %.1f kg %s qolgan, kamroq miqdor kiriting! \n",
+                            products[i-1].getAmount(), products[i-1].getName()
+                            );
+                    productId(id);
+                }else {
+                    System.out.printf("Siz %.1f so'mlik %s sotib oldingiz! \n", amountProduct*products[i-1].getPrice(), products[i-1].getName());
+                    System.out.printf("Omborda %.1f kg %s qoldi! \n", products[i-1].getAmount()-amountProduct, products[i-1].getName());
+
+                }
+            }
+        };
+
     }
     //  Eployeee------------------------------------------------
     public void addEmployee(){
