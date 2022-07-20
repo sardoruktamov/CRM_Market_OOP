@@ -15,13 +15,13 @@ public class Main {
 //        Employee employee = new Employee("Sardor", 7, 30000D);
 
         Product[] products = new Product[]{
-                new Product("olma", 4000d, "meva", 4d, "kg"),
-                new Product("anor", 3000d, "meva", 4d, "kg"),
-                new Product("nok", 4000d, "meva", 4d, "kg"),
-                new Product("gosht", 7000d, "gosht", 4d, "kg"),
-                new Product("shokolat", 5000d, "shirimlik", 4d, "kg"),
-                new Product("banan", 6000d, "meva", 4d, "kg"),
-                new Product("apelsin", 1000d, "meva", 4d, "kg"),
+                new Product("olma", 4000d, "meva", 14d, "kg"),
+                new Product("anor", 3000d, "meva", 5d, "kg"),
+                new Product("nok", 4000d, "meva", 6d, "kg"),
+                new Product("gosht", 7000d, "gosht", 14d, "kg"),
+                new Product("shokolat", 5000d, "shirimlik", 54d, "kg"),
+                new Product("banan", 6000d, "meva", 43d, "kg"),
+                new Product("apelsin", 1000d, "meva", 64d, "kg"),
         };
         market1.setProducts(products);
 
