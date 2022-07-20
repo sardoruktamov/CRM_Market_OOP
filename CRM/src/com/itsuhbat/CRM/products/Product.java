@@ -24,6 +24,16 @@ public class Product {
     public Product() {
     }
 
+//    public void productId(int id){
+//        Product[] products = new Product[]{};
+//
+//        for (int i=0;i< products.length; i++){
+//            if (i == id)
+//                System.out.println(i  + " - " + products[i-1]);
+//        };
+//        System.out.print("omborda"+getAmount()+" kg "+getName()+" qolgan.");
+//    }
+
     public String getName() {
         return name;
     }
