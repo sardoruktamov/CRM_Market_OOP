@@ -2,6 +2,8 @@ package com.itsuhbat.CRM.markets;
 
 import com.itsuhbat.CRM.personnel.Employee;
 import com.itsuhbat.CRM.products.Product;
+import com.itsuhbat.CRM.service.SellerService;
+import com.itsuhbat.CRM.service.Service;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
@@ -141,37 +143,7 @@ public class Market {
     }
 
 
-    public void selectProduct(){
 
-        Scanner scanner = new Scanner(System.in);
-        int action;
-
-        do {
-            System.out.println(
-                    "Menyuni tanlang: " +
-                            "\n[1].Mahsulot qo'shish " +
-                            "\n[2].Mahsulotlar ro'yxati " +
-                            "\n[3].Mahsulotlar ketma-ketlikda chiqarish " +
-                            "\n[4].Mahsulotni o'chirish " +
-                            "\n[5].Market ma'lumotlari " +
-                            "\n[6].Market ma'lumotlarini o'zgartirish " +
-                            "\n[0].Dasturni tugatish");
-            action = scanner.nextInt();
-            switch (action){
-                case 1: addProduct(); break;
-                case 2: printProduct(); break;
-                case 3: {
-                    System.out.println("o'lchamini kiriting: ");
-                    int size = scanner.nextInt();
-                    printProduct(size); break;
-                }
-                case 4: deleteProduct(); break;
-                case 5: marketInfo(); break;
-                case 6: changeMarketInfo(); break;
-                case 0: System.exit(0);
-            }
-        }while (true);
-    }
 
     //market maydonini o`zgartirish methodi
     public void changeMarketInfo(){
@@ -195,7 +167,10 @@ public class Market {
                 case 3: changeMarketSquare();break;
                 case 4: changeMarketStartTime();break;
                 case 5: changeMarketEndTime();break;
-                case 0: selectProduct();
+                case 0: {
+                    SellerService seller = new SellerService();
+                    seller.start();
+                }
             }
         }while (true);
     }
@@ -255,29 +230,29 @@ public class Market {
         Scanner scanner = new Scanner(System.in);
         int action;
 
-        do {
-            System.out.println(
-                    "Menyuni tanlang: " +
-                            "\n[1].Mahsulotlar ro'yxati " +
-                            "\n[2].Mahsulotlar ketma-ketlikda chiqarish " +
-                            "\n[3].Mahsulot sotib olish " +
-                            "\n[0].Dasturni tugatish");
-            action = scanner.nextInt();
-            switch (action){
-                case 1: printProduct(); break;
-                case 2: {
-                    System.out.println("o'lchamini kiriting: ");
-                    int size = scanner.nextInt();
-                    printProduct(size); break;
-                }
-                case 3: {
-                    System.out.println("Mahsulot nomerini kiriting: ");
-                    int id = scanner.nextInt();
-                    productId(id); break;
-                }
-                case 0: System.exit(0);
-            }
-        }while (true);
+//        do {
+//            System.out.println(
+//                    "Menyuni tanlang: " +
+//                            "\n[1].Mahsulotlar ro'yxati " +
+//                            "\n[2].Mahsulotlar ketma-ketlikda chiqarish " +
+//                            "\n[3].Mahsulot sotib olish " +
+//                            "\n[0].Dasturni tugatish");
+//            action = scanner.nextInt();
+//            switch (action){
+//                case 1: printProduct(); break;
+//                case 2: {
+//                    System.out.println("o'lchamini kiriting: ");
+//                    int size = scanner.nextInt();
+//                    printProduct(size); break;
+//                }
+//                case 3: {
+//                    System.out.println("Mahsulot nomerini kiriting: ");
+//                    int id = scanner.nextInt();
+//                    productId(id); break;
+//                }
+//                case 0: System.exit(0);
+//            }
+//        }while (true);
     }
 
     public void productId(int id){

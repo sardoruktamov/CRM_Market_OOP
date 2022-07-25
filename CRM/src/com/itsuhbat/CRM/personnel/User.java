@@ -38,6 +38,6 @@ public class User {
 
     @Override
     public String toString() {
-        return String.format("Ism: %s\n Familya: %s \nXisobRaqam: %f", firstName, lastName, account);
+        return String.format("[1].Ism: %s\n[2].Familya: %s \n[3].Hisobdagi pul miqdori: %.2f", firstName, lastName, account);
     }
 }
