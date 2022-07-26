@@ -145,117 +145,6 @@ public class Market {
     }
 
 
-
-
-    //market maydonini o`zgartirish methodi
-    public void changeMarketInfo(){
-
-        Scanner scanner = new Scanner(System.in);
-        int action;
-
-        do {
-            System.out.println(
-                    "Market maydonini tanlang: " +
-                            "\n[1].nomini o'zgartirish " +
-                            "\n[2].manzilini o'zgartirish " +
-                            "\n[3].maydonini o'zgartirish " +
-                            "\n[4].ish boshlash vaqtini o'zgartirish " +
-                            "\n[5].ish tugash vaqtini o'zgartirish " +
-                            "\n[0].Ortga qaytish");
-            action = scanner.nextInt();
-            switch (action){
-                case 1: changeMarketName();break;
-                case 2: changeMarketAddress();break;
-                case 3: changeMarketSquare();break;
-                case 4: changeMarketStartTime();break;
-                case 5: changeMarketEndTime();break;
-                case 0: {
-                    SellerService seller = new SellerService();
-                    seller.start();
-                }
-            }
-        }while (true);
-    }
-
-
-    public void changeMarketName(){
-//        Scanner scanner = new Scanner(System.in);
-        System.out.print("Yangi nomni kiriting: ");
-        scanner.nextLine();
-        String marketName = scanner.nextLine();
-        setName(marketName);
-        System.out.println("---------------------------------------------");
-        marketInfo();
-        System.out.println("---------------------------------------------");
-    }
-    public void changeMarketSquare(){
-        System.out.print("Yangi maydonni kiriting: ");
-//        scanner.nextDouble();
-        Double marketSquare = scanner.nextDouble();
-        setSquare(marketSquare);
-        System.out.println("---------------------------------------------");
-        marketInfo();
-        System.out.println("---------------------------------------------");
-    }
-    public void changeMarketAddress(){
-        System.out.print("Yangi manzilni kiriting: ");
-//        scanner.nextLine();
-        String marketAddress = scanner.nextLine();
-        setAddress(marketAddress);
-
-        System.out.println("---------------------------------------------");
-        marketInfo();
-        System.out.println("---------------------------------------------");
-    }
-    public void changeMarketStartTime(){
-        System.out.print("Ish boshlash vaqtini kiriting: ");
-//        scanner.nextLine();
-        String marketStartTime = scanner.nextLine();
-        setStartTime(marketStartTime);
-        System.out.println("---------------------------------------------");
-        marketInfo();
-        System.out.println("---------------------------------------------");
-    }
-    public void changeMarketEndTime(){
-        System.out.print("Ish tugash vaqtini kiriting: ");
-        scanner.nextLine();
-        String marketEndTime = scanner.nextLine();
-        setEndTime(marketEndTime);
-        System.out.println("---------------------------------------------");
-        marketInfo();
-        System.out.println("---------------------------------------------");
-    }
-
-    //  Sotuvchi------------------------------------------------
-    public void printClient(){
-        Scanner scanner = new Scanner(System.in);
-        int action;
-
-//        do {
-//            System.out.println(
-//                    "Menyuni tanlang: " +
-//                            "\n[1].Mahsulotlar ro'yxati " +
-//                            "\n[2].Mahsulotlar ketma-ketlikda chiqarish " +
-//                            "\n[3].Mahsulot sotib olish " +
-//                            "\n[0].Dasturni tugatish");
-//            action = scanner.nextInt();
-//            switch (action){
-//                case 1: printProduct(); break;
-//                case 2: {
-//                    System.out.println("o'lchamini kiriting: ");
-//                    int size = scanner.nextInt();
-//                    printProduct(size); break;
-//                }
-//                case 3: {
-//                    System.out.println("Mahsulot nomerini kiriting: ");
-//                    int id = scanner.nextInt();
-//                    productId(id); break;
-//                }
-//                case 0: System.exit(0);
-//            }
-//        }while (true);
-    }
-
     public void productId(int id){
         for (int i=0;i< products.length; i++){
             if (i == id) {
@@ -399,6 +288,12 @@ public class Market {
     @Override
     public String toString() {
         return String.format("Nomi: %s \nManzili: %s \nHajmi: %.1f \nIsh boshlash vaqti: %s \nIsh tugash vaqti: %s ",
+                name, address, square, startTime, endTime);
+    }
+
+
+    public String toStringWithNumber() {
+        return String.format("[1].Nomi: %s \n[2].Manzili: %s \n[3].Hajmi: %.1f \n[4].Ish boshlash vaqti: %s \n[5].Ish tugash vaqti: %s ",
                 name, address, square, startTime, endTime);
     }
 
