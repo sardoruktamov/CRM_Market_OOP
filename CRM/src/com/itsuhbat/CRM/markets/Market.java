@@ -9,6 +9,8 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Scanner;
 
+import static com.itsuhbat.CRM.helper.Config.scanner;
+
 public class Market {
 
     private String name;
@@ -175,12 +177,11 @@ public class Market {
         }while (true);
     }
 
-    public void changeMarketField(){
 
-    }
     public void changeMarketName(){
-        Scanner scanner = new Scanner(System.in);
+//        Scanner scanner = new Scanner(System.in);
         System.out.print("Yangi nomni kiriting: ");
+        scanner.nextLine();
         String marketName = scanner.nextLine();
         setName(marketName);
         System.out.println("---------------------------------------------");
@@ -188,8 +189,8 @@ public class Market {
         System.out.println("---------------------------------------------");
     }
     public void changeMarketSquare(){
-        Scanner scanner = new Scanner(System.in);
         System.out.print("Yangi maydonni kiriting: ");
+//        scanner.nextDouble();
         Double marketSquare = scanner.nextDouble();
         setSquare(marketSquare);
         System.out.println("---------------------------------------------");
@@ -197,8 +198,8 @@ public class Market {
         System.out.println("---------------------------------------------");
     }
     public void changeMarketAddress(){
-        Scanner scanner = new Scanner(System.in);
         System.out.print("Yangi manzilni kiriting: ");
+//        scanner.nextLine();
         String marketAddress = scanner.nextLine();
         setAddress(marketAddress);
 
@@ -207,8 +208,8 @@ public class Market {
         System.out.println("---------------------------------------------");
     }
     public void changeMarketStartTime(){
-        Scanner scanner = new Scanner(System.in);
         System.out.print("Ish boshlash vaqtini kiriting: ");
+//        scanner.nextLine();
         String marketStartTime = scanner.nextLine();
         setStartTime(marketStartTime);
         System.out.println("---------------------------------------------");
@@ -216,8 +217,8 @@ public class Market {
         System.out.println("---------------------------------------------");
     }
     public void changeMarketEndTime(){
-        Scanner scanner = new Scanner(System.in);
         System.out.print("Ish tugash vaqtini kiriting: ");
+        scanner.nextLine();
         String marketEndTime = scanner.nextLine();
         setEndTime(marketEndTime);
         System.out.println("---------------------------------------------");

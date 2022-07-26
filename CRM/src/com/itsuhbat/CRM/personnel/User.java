@@ -12,6 +12,9 @@ public class User {
         this.account = account;
     }
 
+    public void setAddaccount(Double account) {
+        this.account += account;
+    }
     public String getFirstName() {
         return firstName;
     }

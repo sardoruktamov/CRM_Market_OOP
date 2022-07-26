@@ -18,7 +18,7 @@ public class BuyerService {
 
         int action;
 
-        do {
+        while (true){
             System.out.println(
                     "Menyuni tanlang: " +
                             "\n[1].Shaxsiy ma'lumotlar " +
@@ -47,10 +47,12 @@ public class BuyerService {
                     market.productId(id); break;
                 }
                 case 7:
-                    System.out.println("hisobni to`ldirish");;
+                    System.out.println("Pul miqdorini kiriting: ");
+                    Double account = scanner.nextDouble();
+                    user.setAddaccount(account);break;
                 case 0: System.exit(0);
             }
-        }while (true);
+        }
     }
 
     public void changeUserInfo(){
