@@ -24,9 +24,21 @@ public class SuperMarket extends Market{
         int result = scanner.nextInt();
         switch (result) {
             //1.to`g`ridan to`g`ri skitkadagi maxsulotlarga yangi maxsulot qo`shish
-            case 1: addSeles();break;
+            case 1:
+                addSeles();break;
             //2.hozirgi bor productni skidkadagi productlarga o`tkazib qo`yish
+            case 2:
+                super.printProduct();
+                System.out.println("Qaysi mahsulotga chegirma qilmoqchisiz? ");
+                int res = scanner.nextInt();
+                Product sale = super.delProduct(res);
+                System.out.println("Necha foiz chegirma qilmoqchisiz? ");
+                double percent = scanner.nextDouble();
+                sale.setPrice(sale.getPrice() * (100D-percent) / 100D);
+                addSeles(sale);
             //3.odatiy maxsulot qo`shish
+            case 3:
+                super.addProduct();break;
         }
     }
 
@@ -48,12 +60,22 @@ public class SuperMarket extends Market{
         Product product = new Product(name,price, type,amount,unit);
 
         if (selesIndex == sales.length){
-            resizeArray();
+            this.resizeArray();
         }
         sales[selesIndex++] = product;
         System.out.println(name+" ma`lumotlari muvoffaqiyatli qo`shildi"+"\n"+"*****************************************");
     }
+    public void addSeles(Product product){
+        if (selesIndex == sales.length){
+           this.resizeArray();
+        }
+        sales[selesIndex++] = product;
+
+    }
+
     public void resizeArray(){
         sales = Arrays.copyOf(sales,selesIndex*2);
     }
+
+
 }
