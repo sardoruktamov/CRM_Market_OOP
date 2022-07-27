@@ -89,6 +89,20 @@ public class Market {
         products = temp;    // 1-usulda ham yoziladi
     }
 
+    public Product delProduct(int number){
+        if (number >= index){
+            System.out.println("Bunday o'rindagi mahsulotlar mavjud emas!");
+            return null;
+        }
+        Product sales = products[number-1];
+        for (int i=number-1; i<index-1;i++){
+            products[i] = products[i+1];
+        }
+        products[index-1] = null;
+        index--;
+        return sales;
+    }
+
     public void printProduct(){
         for (int i=0; i<index; i++){
             System.out.println(i + 1 + " - " + products[i]);
