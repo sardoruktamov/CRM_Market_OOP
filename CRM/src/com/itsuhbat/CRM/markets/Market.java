@@ -175,7 +175,6 @@ public class Market {
                             );
                     productId(id);
                 }else {
-                    User.
                     System.out.printf("Siz %.1f so'mlik %s sotib oldingiz! \n", amountProduct*products[i-1].getPrice(), products[i-1].getName());
                     System.out.printf("Omborda %.1f kg %s qoldi! \n", products[i-1].getAmount()-amountProduct, products[i-1].getName());
                     System.err.println("**************************************");
