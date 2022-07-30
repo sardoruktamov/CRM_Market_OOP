@@ -1,6 +1,7 @@
 package com.itsuhbat.CRM.markets;
 
 import com.itsuhbat.CRM.personnel.Employee;
+import com.itsuhbat.CRM.personnel.User;
 import com.itsuhbat.CRM.products.Product;
 import com.itsuhbat.CRM.service.SellerService;
 import com.itsuhbat.CRM.service.Service;
@@ -133,7 +134,7 @@ public class Market {
         products = anotherArray;
         index--;
 
-        System.out.println("Mahsulot o'chirildi**********");
+        System.err.println("Mahsulot o'chirildi**********");
     }
 
     public void deleteEmployee(){
@@ -155,7 +156,7 @@ public class Market {
         employees = anotherArray;
         index--;
 
-        System.out.println("Xodim ma`lumotlari o'chirildi**********");
+        System.err.println("Xodim ma`lumotlari o'chirildi**********");
     }
 
 
@@ -174,8 +175,10 @@ public class Market {
                             );
                     productId(id);
                 }else {
+                    User.
                     System.out.printf("Siz %.1f so'mlik %s sotib oldingiz! \n", amountProduct*products[i-1].getPrice(), products[i-1].getName());
                     System.out.printf("Omborda %.1f kg %s qoldi! \n", products[i-1].getAmount()-amountProduct, products[i-1].getName());
+                    System.err.println("**************************************");
 
                 }
             }

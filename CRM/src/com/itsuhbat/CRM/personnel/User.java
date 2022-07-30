@@ -1,16 +1,21 @@
 package com.itsuhbat.CRM.personnel;
 
+import com.itsuhbat.CRM.markets.Market;
+
 public class User {
 
-    String firstName;
-    String lastName;
-    Double account;
+    private String firstName;
+    private String lastName;
+    private Double account;
+
 
     public User(String firstName, String lastName, Double account) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.account = account;
     }
+
+
 
     public void setAddaccount(Double account) {
         this.account += account;
