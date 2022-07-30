@@ -29,6 +29,7 @@ public class Market {
         employees = new Employee[10];
     }
 
+    User user = new User();
 
     public Market(String name, String address, Double square, int prodectCount, int employeeCount) {
         this.name = name;
@@ -175,6 +176,7 @@ public class Market {
                             );
                     productId(id);
                 }else {
+                    System.out.println("pul miqdoriiiii:  " + user.getAccount() + " >>> "+user.getAccount());
                     System.out.printf("Siz %.1f so'mlik %s sotib oldingiz! \n", amountProduct*products[i-1].getPrice(), products[i-1].getName());
                     System.out.printf("Omborda %.1f kg %s qoldi! \n", products[i-1].getAmount()-amountProduct, products[i-1].getName());
                     System.err.println("**************************************");

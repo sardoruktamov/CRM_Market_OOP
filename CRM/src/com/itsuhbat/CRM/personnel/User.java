@@ -15,6 +15,8 @@ public class User {
         this.account = account;
     }
 
+    public User(){}
+
 
 
     public void setAddaccount(Double account) {
