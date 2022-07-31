@@ -19,9 +19,7 @@ public class User {
 
 
 
-    public void setAddaccount(Double account) {
-        this.account += account;
-    }
+
     public String getFirstName() {
         return firstName;
     }
