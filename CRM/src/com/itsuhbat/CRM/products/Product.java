@@ -70,10 +70,8 @@ public class Product {
     }
 
     public void setAmount(Double amount) {
-        if (amount > 1)
-            this.amount = amount;
-        else System.out.println("uzunroq qiymat kiriting:");
-    }
+        this.amount = amount;
+            }
 
     public String getUnit() {
         return unit;
