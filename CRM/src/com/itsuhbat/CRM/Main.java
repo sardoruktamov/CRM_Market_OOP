@@ -1,11 +1,7 @@
 package com.itsuhbat.CRM;
 
 import com.itsuhbat.CRM.markets.Market;
-import com.itsuhbat.CRM.personnel.Employee;
-import com.itsuhbat.CRM.products.Product;
-import com.itsuhbat.CRM.service.Service;
-
-import java.util.Scanner;
+import com.itsuhbat.CRM.service.impl.ServiceImple;
 
 public class Main {
 
@@ -16,7 +12,7 @@ public class Main {
 //        Employee employee = new Employee("Sardor", 7, 30000D);
 
 
-        Service service = new Service(market1);
+        ServiceImple service = new ServiceImple(market1);
         service.start();
         
 
