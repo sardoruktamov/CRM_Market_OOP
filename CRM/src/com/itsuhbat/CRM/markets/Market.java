@@ -3,14 +3,9 @@ package com.itsuhbat.CRM.markets;
 import com.itsuhbat.CRM.personnel.Employee;
 import com.itsuhbat.CRM.personnel.User;
 import com.itsuhbat.CRM.products.Product;
-import com.itsuhbat.CRM.service.SellerService;
-import com.itsuhbat.CRM.service.Service;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Scanner;
-
-import static com.itsuhbat.CRM.helper.Config.scanner;
 
 public class Market {
 
@@ -176,7 +171,8 @@ public class Market {
                             );
                     productId(id);
                 }else {
-                    System.out.println("pul miqdoriiiii:  " + user.getAccount() + " >>> "+user.getAccount());
+                    System.out.println("FIO:  " + user);
+                    System.out.println("pul miqdoriiiii:  " + user.getAccount());
                     System.out.printf("Siz %.1f so'mlik %s sotib oldingiz! \n", amountProduct*products[i-1].getPrice(), products[i-1].getName());
                     System.out.printf("Omborda %.1f kg %s qoldi! \n", products[i-1].getAmount()-amountProduct, products[i-1].getName());
                     System.err.println("**************************************");
