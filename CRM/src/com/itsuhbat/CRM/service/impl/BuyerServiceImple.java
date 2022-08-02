@@ -107,24 +107,6 @@ public class BuyerServiceImple implements BuyerService {
             if (id == i+1) {
                 product = products[i];
                 break;
-//                System.out.printf("Omborda %.1f kg %s qolgan \n", products[i-1].getAmount(), products[i-1].getName());
-//                Scanner scanner = new Scanner(System.in);
-//                System.out.printf("Qancha miqdorda %s sotib olmoqchisiz? \n", products[i-1].getName());
-//                double amountProduct = scanner.nextDouble();
-//                if (products[i-1].getAmount() < amountProduct){
-//                    System.out.printf(
-//                            "Omborda %.1f kg %s qolgan, kamroq miqdor kiriting! \n",
-//                            products[i-1].getAmount(), products[i-1].getName()
-//                    );
-//                    productId(id);
-//                }else {
-//                    System.out.println("FIO:  ");
-//                    System.out.println("pul miqdoriiiii:  " + user.getAccount());
-//                    System.out.printf("Siz %.1f so'mlik %s sotib oldingiz! \n", amountProduct*products[i-1].getPrice(), products[i-1].getName());
-//                    System.out.printf("Omborda %.1f kg %s qoldi! \n", products[i-1].getAmount()-amountProduct, products[i-1].getName());
-//                    System.err.println("**************************************");
-//
-//                }
             }
 
         }
@@ -165,10 +147,6 @@ public class BuyerServiceImple implements BuyerService {
                         }else System.out.println("Xisobingizdagi mablag; yetarli emas! ");
 
                     }else System.out.println("Sotib olishni bekor qildingiz!");
-
-//                    System.out.printf("Siz %.1f so'mlik %s sotib oldingiz! \n", amountProduct*products[i-1].getPrice(), products[i-1].getName());
-//                    System.out.printf("Omborda %.1f kg %s qoldi! \n", products[i-1].getAmount()-amountProduct, products[i-1].getName());
-//                    System.err.println("**************************************");
 
                 }
         }
