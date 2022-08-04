@@ -20,6 +20,6 @@ public class ArrayListLesson {
         System.out.println("removeIf >> "+arrayList.removeIf(i -> i%2==0));  //royxatdagi elementlarni o`chirishda shart berish
         System.out.println(arrayList);
         System.out.println(arrayList.removeAll(List.of(1,5,435)));  // 1,5,435 elemenrlari royxatda ham bolsa o`chiradi
-        
+
     }
 }
