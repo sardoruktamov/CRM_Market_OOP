@@ -4,6 +4,9 @@ import com.itsuhbat.CRM.markets.Market;
 import com.itsuhbat.CRM.products.Product;
 import com.itsuhbat.CRM.service.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static com.itsuhbat.CRM.helper.Config.scanner;
 
 public class ServiceImple implements Service {
@@ -37,7 +40,10 @@ public class ServiceImple implements Service {
      }
 
      public void initProduct(){
-         Product[] products = new Product[]{
+         List<Product> products = new ArrayList<Product>();
+         products.add("olma", 4000d,"meva", 30d, "kg");
+
+         Product[] productss = new Product[]{
                  new Product("olma", 4000d, "meva", 14d, "kg"),
                  new Product("anor", 3000d, "meva", 5d, "kg"),
                  new Product("nok", 4000d, "meva", 6d, "kg"),
@@ -46,7 +52,7 @@ public class ServiceImple implements Service {
                  new Product("banan", 6000d, "meva", 43d, "kg"),
                  new Product("apelsin", 1000d, "meva", 64d, "kg"),
          };
-         market.setProducts(products);
+         market.setProducts(productss);
      }
 
 }
