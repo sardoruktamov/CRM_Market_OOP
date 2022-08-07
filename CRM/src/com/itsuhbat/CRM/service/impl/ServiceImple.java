@@ -40,19 +40,17 @@ public class ServiceImple implements Service {
      }
 
      public void initProduct(){
-         List<Product> products = new ArrayList<Product>();
-         products.add("olma", 4000d,"meva", 30d, "kg");
 
-         Product[] productss = new Product[]{
-                 new Product("olma", 4000d, "meva", 14d, "kg"),
+         List<Product> lp = List.of(new Product("olma", 4000d, "meva", 14d, "kg"),
                  new Product("anor", 3000d, "meva", 5d, "kg"),
                  new Product("nok", 4000d, "meva", 6d, "kg"),
                  new Product("gosht", 7000d, "gosht", 14d, "kg"),
                  new Product("shokolat", 5000d, "shirimlik", 54d, "kg"),
                  new Product("banan", 6000d, "meva", 43d, "kg"),
-                 new Product("apelsin", 1000d, "meva", 64d, "kg"),
-         };
-         market.setProducts(productss);
+                 new Product("apelsin", 1000d, "meva", 64d, "kg"));
+
+         ArrayList<Product> list = new ArrayList<>();
+         market.setProducts(list);
      }
 
 }

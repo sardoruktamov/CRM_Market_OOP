@@ -4,6 +4,7 @@ import com.itsuhbat.CRM.personnel.Employee;
 import com.itsuhbat.CRM.personnel.User;
 import com.itsuhbat.CRM.products.Product;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -11,7 +12,7 @@ public class Market {
 
     private String name;
     private String address;
-    private Product[] products;
+    private ArrayList<Product> products;
     private Employee[] employees;
     private Double square;
     private String startTime;
@@ -20,7 +21,7 @@ public class Market {
     private int index;
 
     public Market() {
-        products = new Product[10];
+        products = new ArrayList<>();
         employees = new Employee[10];
     }
 
@@ -30,7 +31,7 @@ public class Market {
         this.name = name;
         this.address = address;
         this.square = square;
-        products = new Product[prodectCount];
+        products = new ArrayList<>(prodectCount);
         employees = new Employee[employeeCount];
     }
 
@@ -64,50 +65,51 @@ public class Market {
 
         Product product = new Product(name,price, type,amount,unit);
 
-        if (index == products.length){
-            resizeArray();
-        }
-        products[index++] = product;
+
+        products.add(product);
         System.out.println(name+" ma`lumotlari muvoffaqiyatli qo`shildi"+"\n"+"*****************************************");
     }
 
     //product massivini uzunligini oshirish
-    public void resizeArray(){
-        Product[] temp = new Product[products.length + 1];
-
-        //1-usul
-//        products = Arrays.copyOf(products, products.length + 1);
-
-        // 2-usul
-
-        for (int i=0; i<products.length; i++){
-            temp[i] = products[i];      //product qiymatlarini vaqtincha temp ga olib o`tyapmiz
-        }
-        products = temp;    // 1-usulda ham yoziladi
-    }
+//    public void resizeArray(){
+//        Product[] temp = new Product[products.length + 1];
+//
+//        //1-usul
+////        products = Arrays.copyOf(products, products.length + 1);
+//
+//        // 2-usul
+//
+//        for (int i=0; i<products.length; i++){
+//            temp[i] = products[i];      //product qiymatlarini vaqtincha temp ga olib o`tyapmiz
+//        }
+//        products = temp;    // 1-usulda ham yoziladi
+//    }
 
     public Product delProduct(int number){
-        if (number >= index){
+        if (number >= products.size()){
             System.out.println("Bunday o'rindagi mahsulotlar mavjud emas!");
             return null;
         }
-        Product sales = products[number-1];
-        for (int i=number-1; i<index-1;i++){
-            products[i] = products[i+1];
-        }
-        products[index-1] = null;
-        index--;
-        return sales;
+//        Product sales = products[number-1];
+//        for (int i=number-1; i<index-1;i++){
+//            products[i] = products[i+1];
+//        }
+//        products[index-1] = null;
+//        index--;
+
+        return products.remove(number);
     }
 
     public void printProduct(){
-        for (int i=0; i<index; i++){
-            System.out.println(i + 1 + " - " + products[i]);
+        int i=1;
+        for (Product product: products){
+            System.out.println(i + " - " + product);
+            i++;
         };
     }
     public void printProduct(int size){
-        for (int i=0;i<size && i<index; i++){
-            System.out.println(i + 1 + " - " + products[i]);
+        for (int i=0;i<size && i<products.size(); i++){
+            System.out.println(i + 1 + " - " + products.get(i));
         };
     }
 
@@ -157,24 +159,24 @@ public class Market {
 
 
     public void productId(int id){
-        for (int i=0;i< products.length; i++){
+        for (int i=0;i< products.size(); i++){
             if (i == id) {
 
-                System.out.printf("Omborda %.1f kg %s qolgan \n", products[i-1].getAmount(), products[i-1].getName());
+                System.out.printf("Omborda %.1f kg %s qolgan \n", products.get(i-1).getAmount(), products.get(i-1).getName());
                 Scanner scanner = new Scanner(System.in);
-                System.out.printf("Qancha miqdorda %s sotib olmoqchisiz? \n", products[i-1].getName());
+                System.out.printf("Qancha miqdorda %s sotib olmoqchisiz? \n", products.get(i-1).getName());
                 double amountProduct = scanner.nextDouble();
-                if (products[i-1].getAmount() < amountProduct){
+                if (products.get(i-1).getAmount() < amountProduct){
                     System.out.printf(
                             "Omborda %.1f kg %s qolgan, kamroq miqdor kiriting! \n",
-                            products[i-1].getAmount(), products[i-1].getName()
+                            products.get(i-1).getAmount(), products.get(i-1).getName()
                             );
                     productId(id);
                 }else {
                     System.out.println("FIO:  " + user);
                     System.out.println("pul miqdoriiiii:  " + user.getAccount());
-                    System.out.printf("Siz %.1f so'mlik %s sotib oldingiz! \n", amountProduct*products[i-1].getPrice(), products[i-1].getName());
-                    System.out.printf("Omborda %.1f kg %s qoldi! \n", products[i-1].getAmount()-amountProduct, products[i-1].getName());
+                    System.out.printf("Siz %.1f so'mlik %s sotib oldingiz! \n", amountProduct*products.get(i-1).getPrice(), products.get(i-1).getName());
+                    System.out.printf("Omborda %.1f kg %s qoldi! \n", products.get(i-1).getAmount()-amountProduct, products.get(i-1).getName());
                     System.err.println("**************************************");
 
                 }
@@ -255,14 +257,12 @@ public class Market {
         else System.out.printf("%s uzunligi yetarli emas!", address);
     }
 
-    public Product[] getProducts() {
+    public ArrayList<Product> getProducts() {
         return products;
     }
 
-    public void setProducts(Product[] products) {
+    public void setProducts(ArrayList<Product> products) {
         this.products = products;
-        index = products.length;
-        resizeArray();
     }
 
     public Employee[] getEmployees() {
