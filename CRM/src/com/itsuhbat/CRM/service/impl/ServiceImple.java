@@ -41,7 +41,8 @@ public class ServiceImple implements Service {
 
      public void initProduct(){
 
-         List<Product> lp = List.of(new Product("olma", 4000d, "meva", 14d, "kg"),
+         List<Product> lp = List.of(
+                 new Product("olma", 4000d, "meva", 14d, "kg"),
                  new Product("anor", 3000d, "meva", 5d, "kg"),
                  new Product("nok", 4000d, "meva", 6d, "kg"),
                  new Product("gosht", 7000d, "gosht", 14d, "kg"),

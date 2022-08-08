@@ -119,24 +119,11 @@ public class Market {
     }
 
     public void deleteProduct(){
-        /** Listga o'tkazilgan paytda izoxga olindi*/
-//        String nameProduct;
-//        Scanner nameScaner = new Scanner(System.in);
-//        System.out.println("o'chirish uchun maxsulot nomini kiriting:");
-//        nameProduct = nameScaner.nextLine();
-//        Product[] anotherArray = new Product[products.size()-1];
-//
-//
-//        for (int i = 0, k = 0; i < index; i++) {
-//
-//            if (products.get(i).getName().equalsIgnoreCase(nameProduct)) {
-//                continue;
-//            }
-//            anotherArray[k++] = products.get(i);
-//        }
-//        products = anotherArray;
-//        index--;
 
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("o'chirish uchun maxsulot nomerini kiriting:");
+        int number = scanner.nextInt()+1;
+        products.remove(number);
         System.err.println("Mahsulot o'chirildi**********");
     }
 
