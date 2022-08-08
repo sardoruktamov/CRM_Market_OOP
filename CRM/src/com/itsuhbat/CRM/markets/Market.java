@@ -102,10 +102,13 @@ public class Market {
 
     public void printProduct(){
         int i=1;
-        for (Product product: products){
-            System.out.println(i + " - " + product);
-            i++;
-        };
+        products.forEach(s -> {
+            System.out.println(s);
+        });
+//        for (Product product: products){
+//            System.out.println(i + " - " + product);
+//            i++;
+//        };
     }
     public void printProduct(int size){
         for (int i=0;i<size && i<products.size(); i++){
@@ -114,23 +117,23 @@ public class Market {
     }
 
     public void deleteProduct(){
-
-        String nameProduct;
-        Scanner nameScaner = new Scanner(System.in);
-        System.out.println("o'chirish uchun maxsulot nomini kiriting:");
-        nameProduct = nameScaner.nextLine();
-        Product[] anotherArray = new Product[products.length-1];
-
-
-        for (int i = 0, k = 0; i < index; i++) {
-
-            if (products[i].getName().equalsIgnoreCase(nameProduct)) {
-                continue;
-            }
-            anotherArray[k++] = products[i];
-        }
-        products = anotherArray;
-        index--;
+        /** Listga o'tkazilgan paytda izoxga olindi*/
+//        String nameProduct;
+//        Scanner nameScaner = new Scanner(System.in);
+//        System.out.println("o'chirish uchun maxsulot nomini kiriting:");
+//        nameProduct = nameScaner.nextLine();
+//        Product[] anotherArray = new Product[products.size()-1];
+//
+//
+//        for (int i = 0, k = 0; i < index; i++) {
+//
+//            if (products.get(i).getName().equalsIgnoreCase(nameProduct)) {
+//                continue;
+//            }
+//            anotherArray[k++] = products.get(i);
+//        }
+//        products = anotherArray;
+//        index--;
 
         System.err.println("Mahsulot o'chirildi**********");
     }

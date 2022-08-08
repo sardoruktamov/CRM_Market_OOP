@@ -5,6 +5,8 @@ import com.itsuhbat.CRM.personnel.User;
 import com.itsuhbat.CRM.products.Product;
 import com.itsuhbat.CRM.service.BuyerService;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 import static com.itsuhbat.CRM.helper.Config.scanner;
@@ -100,12 +102,12 @@ public class BuyerServiceImple implements BuyerService {
     }
 
     public void productId(int id){
-
-        Product[] products = market.getProducts();
+        ArrayList<Product> products = market.getProducts();
+//        Product[] products = market.getProducts();
         Product product = null;
-        for (int i = 0; i< products.length; i++){
+        for (int i = 0; i< products.size(); i++){
             if (id == i+1) {
-                product = products[i];
+                product = products.get(i);
                 break;
             }
 
