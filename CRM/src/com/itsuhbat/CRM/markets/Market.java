@@ -56,11 +56,11 @@ public class Market {
         name = scanner.nextLine();
         System.out.print("type: ");
         type = scanner.nextLine();
-        System.out.print("unit: ");
+        System.out.print("o'lchov birligi: ");
         unit = scanner.nextLine();
-        System.out.print("amount: ");
+        System.out.print("miqdori: ");
         amount = scanner.nextDouble();
-        System.out.print("price: ");
+        System.out.print("narxi: ");
         price = scanner.nextDouble();
 
         Product product = new Product(name,price, type,amount,unit);
@@ -102,14 +102,16 @@ public class Market {
 
     public void printProduct(){
         int i=1;
-        products.forEach(s -> {
-            System.out.println(s);
-        });
-//        for (Product product: products){
-//            System.out.println(i + " - " + product);
-//            i++;
-//        };
+        System.out.println("***********");
+//        products.forEach(s -> {
+//            System.out.println(s);
+//        });
+        for (Product product: products){
+            System.out.println(i + " - " + product);
+            i++;
+        };
     }
+
     public void printProduct(int size){
         for (int i=0;i<size && i<products.size(); i++){
             System.out.println(i + 1 + " - " + products.get(i));

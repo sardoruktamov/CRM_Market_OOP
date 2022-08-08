@@ -49,7 +49,7 @@ public class ServiceImple implements Service {
                  new Product("banan", 6000d, "meva", 43d, "kg"),
                  new Product("apelsin", 1000d, "meva", 64d, "kg"));
 
-         ArrayList<Product> list = new ArrayList<>();
+         ArrayList<Product> list = new ArrayList<>(lp);
          market.setProducts(list);
      }
 
