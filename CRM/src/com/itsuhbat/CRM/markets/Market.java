@@ -122,7 +122,7 @@ public class Market {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("o'chirish uchun maxsulot nomerini kiriting:");
-        int number = scanner.nextInt()+1;
+        int number = scanner.nextInt()-1;
         products.remove(number);
         System.err.println("Mahsulot o'chirildi**********");
     }
